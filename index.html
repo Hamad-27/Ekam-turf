@@ -9,9 +9,7 @@
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
+/* ================= RESET ================= */
 
 *{
     margin:0;
@@ -30,9 +28,7 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================================================
-   SCROLL BAR
-========================================================= */
+/* ================= SCROLL BAR ================= */
 
 ::-webkit-scrollbar{
     width:8px;
@@ -47,9 +43,7 @@ body{
     border-radius:20px;
 }
 
-/* =========================================================
-   BACKGROUND EFFECT
-========================================================= */
+/* ================= BACKGROUND ================= */
 
 body::before{
     content:"";
@@ -79,9 +73,7 @@ body::after{
     z-index:-1;
 }
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* ================= NAVBAR ================= */
 
 header{
     position:fixed;
@@ -89,7 +81,7 @@ header{
     left:0;
     width:100%;
     z-index:1000;
-    background:rgba(5,7,5,.65);
+    background:rgba(5,7,5,.75);
     backdrop-filter:blur(18px);
     border-bottom:1px solid rgba(255,255,255,.07);
 }
@@ -161,9 +153,7 @@ header{
     cursor:pointer;
 }
 
-/* =========================================================
-   HERO
-========================================================= */
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
@@ -213,19 +203,7 @@ header{
     object-fit:contain;
     margin-bottom:25px;
 
-    animation:logoFloat 4s ease-in-out infinite;
     filter:drop-shadow(0 0 25px rgba(34,197,94,.3));
-}
-
-@keyframes logoFloat{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
 }
 
 .hero-tag{
@@ -298,53 +276,7 @@ header{
     transform:translateY(-4px);
 }
 
-/* =========================================================
-   SCROLL INDICATOR
-========================================================= */
-
-.scroll-down{
-    position:absolute;
-    bottom:40px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:4;
-
-    color:#aaa;
-    font-size:12px;
-    letter-spacing:3px;
-    text-align:center;
-}
-
-.scroll-line{
-    width:1px;
-    height:45px;
-    background:#22c55e;
-    margin:10px auto 0;
-
-    animation:scrollLine 1.5s infinite;
-}
-
-@keyframes scrollLine{
-
-    0%{
-        height:10px;
-        opacity:0;
-    }
-
-    50%{
-        height:45px;
-        opacity:1;
-    }
-
-    100%{
-        height:10px;
-        opacity:0;
-    }
-}
-
-/* =========================================================
-   SECTION
-========================================================= */
+/* ================= SECTION ================= */
 
 section{
     padding:110px 22px;
@@ -380,9 +312,7 @@ section{
     margin-top:18px;
 }
 
-/* =========================================================
-   STATS
-========================================================= */
+/* ================= STATS ================= */
 
 .stats{
     margin-top:-30px;
@@ -421,9 +351,7 @@ section{
     font-size:13px;
 }
 
-/* =========================================================
-   ABOUT
-========================================================= */
+/* ================= ABOUT ================= */
 
 .about-grid{
     margin-top:55px;
@@ -491,9 +419,7 @@ section{
     color:#777;
 }
 
-/* =========================================================
-   SERVICES
-========================================================= */
+/* ================= SERVICES ================= */
 
 .services{
     background:#080b08;
@@ -565,9 +491,7 @@ section{
     margin-top:10px;
 }
 
-/* =========================================================
-   GALLERY
-========================================================= */
+/* ================= GALLERY ================= */
 
 .gallery-grid{
     margin-top:55px;
@@ -599,18 +523,7 @@ section{
     transform:scale(1.08);
 }
 
-/* =========================================================
-   BOOKING
-========================================================= */
-
-.booking{
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(34,197,94,.12),
-            transparent 55%
-        );
-}
+/* ================= BOOKING ================= */
 
 .booking-box{
     margin-top:55px;
@@ -662,7 +575,6 @@ select{
 input:focus,
 select:focus{
     border-color:#22c55e;
-    box-shadow:0 0 0 3px rgba(34,197,94,.08);
 }
 
 .submit{
@@ -672,9 +584,7 @@ select:focus{
     font-size:15px;
 }
 
-/* =========================================================
-   REVIEWS
-========================================================= */
+/* ================= REVIEWS ================= */
 
 .reviews{
     background:#080b08;
@@ -735,9 +645,7 @@ select:focus{
     font-size:14px;
 }
 
-/* =========================================================
-   LOCATION
-========================================================= */
+/* ================= LOCATION ================= */
 
 .location-grid{
     margin-top:55px;
@@ -778,9 +686,7 @@ select:focus{
     justify-content:center;
 }
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* ================= FOOTER ================= */
 
 footer{
     padding:60px 22px 30px;
@@ -851,42 +757,7 @@ footer{
     color:#031108;
 }
 
-/* =========================================================
-   SCROLL ANIMATION
-========================================================= */
-
-.reveal{
-    opacity:0;
-    transform:translateY(60px);
-    transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.7,.2,1);
-}
-
-.reveal-left{
-    opacity:0;
-    transform:translateX(-70px);
-    transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.7,.2,1);
-}
-
-.reveal-right{
-    opacity:0;
-    transform:translateX(70px);
-    transition:
-        opacity .9s ease,
-        transform .9s cubic-bezier(.2,.7,.2,1);
-}
-
-.show{
-    opacity:1;
-    transform:translate(0,0);
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
@@ -916,10 +787,6 @@ footer{
 
     .menu{
         display:block;
-    }
-
-    .nav-book{
-        display:inline-block;
     }
 
     .stats-grid{
@@ -957,7 +824,6 @@ footer{
         grid-column:span 2;
         grid-row:span 1;
     }
-
 }
 
 @media(max-width:550px){
@@ -987,10 +853,6 @@ footer{
 
     .hero-description{
         font-size:15px;
-    }
-
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
     }
 
     .about-photo{
@@ -1023,19 +885,14 @@ footer{
         flex-direction:column;
         text-align:center;
     }
-
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================================================
-     NAVBAR
-========================================================= -->
+<!-- ================= NAVBAR ================= -->
 
 <header>
 
@@ -1050,7 +907,6 @@ EKAM <span>FOOTBALL</span>
 </div>
 
 </a>
-
 
 <ul class="nav-links" id="navLinks">
 
@@ -1080,7 +936,6 @@ EKAM <span>FOOTBALL</span>
 
 </ul>
 
-
 <div class="menu" onclick="toggleMenu()">
 ☰
 </div>
@@ -1090,14 +945,11 @@ EKAM <span>FOOTBALL</span>
 </header>
 
 
-
-<!-- =========================================================
-     HERO
-========================================================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
-<div class="hero-content reveal">
+<div class="hero-content">
 
 <img
 src="logo.png"
@@ -1105,31 +957,21 @@ alt="EKAM Football Academy"
 class="hero-logo"
 >
 
-
 <div class="hero-tag">
 FOOTBALL • TRAINING • PASSION
 </div>
 
-
 <h1>
-
 PLAY<br>
-
 <span>LIKE YOU</span><br>
-
 MEAN IT.
-
 </h1>
 
-
 <p class="hero-description">
-
 Welcome to EKAM Football Academy.
 A place where players train harder,
 play smarter and enjoy the beautiful game.
-
 </p>
-
 
 <div class="hero-buttons">
 
@@ -1149,28 +991,16 @@ class="btn btn-outline"
 
 </div>
 
-
-<div class="scroll-down">
-
-SCROLL
-
-<div class="scroll-line"></div>
-
-</div>
-
 </section>
 
 
-
-<!-- =========================================================
-     STATS
-========================================================= -->
+<!-- ================= STATS ================= -->
 
 <section class="stats">
 
 <div class="container">
 
-<div class="stats-grid reveal">
+<div class="stats-grid">
 
 <div class="stat">
 
@@ -1184,7 +1014,6 @@ Google Rating
 
 </div>
 
-
 <div class="stat">
 
 <div class="stat-number">
@@ -1197,7 +1026,6 @@ Reviews
 
 </div>
 
-
 <div class="stat">
 
 <div class="stat-number">
@@ -1209,7 +1037,6 @@ Football
 </div>
 
 </div>
-
 
 <div class="stat">
 
@@ -1230,16 +1057,11 @@ Open
 </section>
 
 
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
 <div class="container">
-
-<div class="reveal">
 
 <div class="section-label">
 ABOUT EKAM
@@ -1254,37 +1076,26 @@ A place for football lovers to meet, train,
 compete and create unforgettable moments.
 </p>
 
-</div>
-
-
 <div class="about-grid">
 
-
-<div class="about-photo reveal-left">
+<div class="about-photo">
 </div>
 
-
-<div class="about-content reveal-right">
+<div class="about-content">
 
 <p>
-
 Football is more than just a game.
 It's about teamwork, competition,
 discipline and having fun with your team.
-
 </p>
 
 <p>
-
 EKAM Football Academy is built for players
 who want a quality place to play football
 with friends and teammates.
-
 </p>
 
-
 <div class="feature-grid">
-
 
 <div class="feature">
 
@@ -1302,7 +1113,6 @@ Great surface for your game.
 
 </div>
 
-
 <div class="feature">
 
 <div class="feature-icon">
@@ -1318,6 +1128,317 @@ Bright floodlit playing area.
 </p>
 
 </div>
+
+<div class="feature">
+
+<div class="feature-icon">
+👥
+</div>
+
+<h3>
+5s & 7s
+</h3>
+
+<p>
+Different football formats.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-icon">
+🏆
+</div>
+
+<h3>
+Tournaments
+</h3>
+
+<p>
+Bring your team and compete.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-label">
+EKAM ACADEMY
+</div>
+
+<h2 class="section-title">
+TRAIN.<br>
+<span>PLAY. WIN.</span>
+</h2>
+
+<p class="section-description">
+Everything you need for an exciting football session.
+</p>
+
+<div class="service-grid">
+
+<div class="service">
+
+<div class="service-icon">
+⚽
+</div>
+
+<h3>
+Football Turf
+</h3>
+
+<p>
+Play 5-a-side and 7-a-side matches
+with your friends and team.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+🌙
+</div>
+
+<h3>
+Night Football
+</h3>
+
+<p>
+Keep the game going after sunset
+with floodlit football.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+🏆
+</div>
+
+<h3>
+Tournaments
+</h3>
+
+<p>
+Bring teams together and organize
+competitive football matches.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+🔥
+</div>
+
+<h3>
+Training
+</h3>
+
+<p>
+Improve your skills, fitness,
+passing and teamwork.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+👟
+</div>
+
+<h3>
+Team Sessions
+</h3>
+
+<p>
+Perfect for friends, clubs and
+football teams.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+📅
+</div>
+
+<h3>
+Easy Booking
+</h3>
+
+<p>
+Choose your time and contact us
+to reserve your session.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-label">
+OUR TURF
+</div>
+
+<h2 class="section-title">
+THE <span>GAME</span> STARTS HERE.
+</h2>
+
+<p class="section-description">
+Replace these sample images with your actual EKAM photos.
+</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1200&q=90"
+alt="Football Turf"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=90"
+alt="Football"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=90"
+alt="Football Match"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=90"
+alt="Football Field"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=90"
+alt="Football Players"
+>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-label">
+PLAYER REVIEWS
+</div>
+
+<h2 class="section-title">
+WHAT PLAYERS <span>SAY.</span>
+</h2>
+
+<div class="rating-box">
+
+<div class="rating-number">
+4.4
+</div>
+
+<div>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="rating-text">
+65+ Google Reviews
+</div>
+
+</div>
+
+</div>
+
+<div class="review-grid">
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<div style="margin-top:15px">
+
+<div class="review-name">
+Abdul Wadhood
+</div>
+
+<div class="review-date">
+7 months ago
+</div>
+
+</div>
+
+<p>
+Well maintained football turf.
+The turf is in good condition and
+suitable for 5s and 7s.
+</p>
+
+</div>
+
+<div class="review">
+
+<div cl
 
 
     
