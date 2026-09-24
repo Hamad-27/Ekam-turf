@@ -1464,6 +1464,41 @@ The turf is suitable for football matches.
 </div>
 
 </section>
+    <script>
+
+function bookNow(){
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
+    const players = document.getElementById("players").value;
+
+    if(!name || !phone || !date || !time || !players){
+        alert("Please fill in all the details ⚽");
+        return;
+    }
+
+    const message =
+        "⚽ EKAM FOOTBALL ACADEMY - BOOKING REQUEST\n\n" +
+        "👤 Name: " + name + "\n" +
+        "📞 Phone: " + phone + "\n" +
+        "📅 Date: " + date + "\n" +
+        "⏰ Time: " + time + "\n" +
+        "👥 Players: " + players;
+
+    const whatsappNumber = "919000000000";
+
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+
+    </script>
 
 </body>
 </html>
