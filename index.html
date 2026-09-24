@@ -4,1499 +4,1441 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EKAM Football Turf</title>
-<meta name="description" content="EKAM Football Turf - Play. Compete. Repeat.">
+<title>EKAM Football Academy</title>
+<meta name="description" content="EKAM Football Academy - Train. Play. Become Better.">
 
 <style>
 
-/* =========================
-   RESET
-========================= */
+/* ================= RESET ================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: auto;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050806;
-    color: #ffffff;
-    overflow-x: hidden;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#050705;
+    color:white;
+    overflow-x:hidden;
 }
 
+/* ================= SCROLL BAR ================= */
 
-/* =========================
-   VARIABLES
-========================= */
-
-:root {
-    --green: #20e879;
-    --green2: #0fcf63;
-    --dark: #050806;
-    --card: #0d1510;
-    --card2: #111c14;
-    --white: #ffffff;
-    --muted: #9ba69e;
-    --border: rgba(32, 232, 121, 0.18);
+::-webkit-scrollbar{
+    width:8px;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 76px;
-    z-index: 1000;
-
-    background: rgba(5, 8, 6, 0.88);
-    backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(32,232,121,0.12);
+::-webkit-scrollbar-track{
+    background:#050705;
 }
 
-.navbar {
-    max-width: 1200px;
-    height: 76px;
-    margin: auto;
-    padding: 0 22px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+::-webkit-scrollbar-thumb{
+    background:#22c55e;
+    border-radius:20px;
 }
 
+/* ================= BACKGROUND ================= */
 
-/* LOGO */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    color: white;
-    text-decoration: none;
-
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: 1px;
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#16a34a;
+    filter:blur(180px);
+    opacity:.08;
+    top:-200px;
+    left:-200px;
+    pointer-events:none;
+    z-index:-1;
 }
 
-.logo img {
-    width: 48px;
-    height: 48px;
-
-    object-fit: contain;
-
-    border-radius: 13px;
-
-    background: white;
-
-    box-shadow:
-        0 0 18px rgba(32,232,121,0.25);
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#22c55e;
+    filter:blur(180px);
+    opacity:.06;
+    bottom:-200px;
+    right:-200px;
+    pointer-events:none;
+    z-index:-1;
 }
 
-.logo span {
-    color: var(--green);
+/* ================= NAVBAR ================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,7,5,.75);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.07);
 }
 
+.navbar{
+    max-width:1200px;
+    height:76px;
+    margin:auto;
+    padding:0 22px;
 
-/* NAVIGATION */
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-
-    list-style: none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.nav-links a {
-    color: #dce3df;
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    transition: 0.2s;
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:white;
 }
 
-.nav-links a:hover {
-    color: var(--green);
+.brand img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    border-radius:12px;
 }
 
-.nav-book {
-    padding: 11px 18px;
-
-    background: var(--green);
-    color: #031008 !important;
-
-    border-radius: 30px;
+.brand-text{
+    font-weight:900;
+    font-size:21px;
+    letter-spacing:1px;
 }
 
-.nav-book:hover {
-    background: white;
+.brand-text span{
+    color:#22c55e;
 }
 
-
-/* MOBILE MENU */
-
-.menu-btn {
-    display: none;
-
-    width: 44px;
-    height: 44px;
-
-    border-radius: 12px;
-
-    background: #101a13;
-    border: 1px solid var(--border);
-
-    color: white;
-
-    font-size: 24px;
-
-    cursor: pointer;
-
-    align-items: center;
-    justify-content: center;
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
 }
 
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    transition:.3s;
+}
 
-/* =========================
-   HERO
-========================= */
+.nav-links a:hover{
+    color:#22c55e;
+}
 
-.hero {
-    min-height: 850px;
+.nav-book{
+    background:#22c55e !important;
+    color:#021006 !important;
+    padding:11px 18px;
+    border-radius:30px;
+}
 
-    padding: 150px 22px 100px;
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
 
-    display: flex;
-    align-items: center;
+/* ================= HERO ================= */
 
-    position: relative;
+.hero{
+    min-height:100vh;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    padding:130px 22px 80px;
 
     background:
         linear-gradient(
             90deg,
-            rgba(3,8,5,0.97) 0%,
-            rgba(3,8,5,0.80) 45%,
-            rgba(3,8,5,0.55) 100%
+            rgba(0,0,0,.92) 0%,
+            rgba(0,0,0,.70) 45%,
+            rgba(0,0,0,.35) 100%
         ),
-        url("https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1800&q=90")
-        center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
 }
 
+.hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:180px;
 
-/* GREEN GLOW */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    width: 500px;
-    height: 500px;
-
-    left: -250px;
-    top: 180px;
-
-    background: var(--green);
-
-    opacity: 0.08;
-
-    filter: blur(100px);
-
-    border-radius: 50%;
+    background:linear-gradient(
+        transparent,
+        #050705
+    );
 }
 
-.hero-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-
-    position: relative;
-    z-index: 2;
+.hero-content{
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    position:relative;
+    z-index:2;
 }
 
+.hero-logo{
+    width:150px;
+    height:150px;
+    object-fit:contain;
+    margin-bottom:25px;
 
-/* BADGE */
-
-.badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-
-    padding: 10px 16px;
-
-    border: 1px solid rgba(32,232,121,0.35);
-
-    background: rgba(32,232,121,0.09);
-
-    color: var(--green);
-
-    border-radius: 30px;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 1px;
+    filter:drop-shadow(0 0 25px rgba(34,197,94,.3));
 }
 
-
-/* HERO TITLE */
-
-.hero h1 {
-    margin-top: 25px;
-
-    font-size: clamp(55px, 10vw, 120px);
-
-    line-height: 0.88;
-
-    font-weight: 950;
-
-    letter-spacing: -6px;
+.hero-tag{
+    color:#22c55e;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:15px;
 }
 
-.hero h1 span {
-    color: var(--green);
+.hero h1{
+    font-size:clamp(55px,10vw,120px);
+    line-height:.86;
+    font-weight:1000;
+    letter-spacing:-6px;
+    max-width:900px;
 }
 
-
-/* HERO TEXT */
-
-.hero p {
-    max-width: 620px;
-
-    margin-top: 30px;
-
-    color: #c0c9c3;
-
-    font-size: 18px;
-
-    line-height: 1.7;
+.hero h1 span{
+    color:#22c55e;
 }
 
+.hero-description{
+    max-width:570px;
+    margin-top:28px;
 
-/* BUTTONS */
-
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 30px;
+    color:#cfcfcf;
+    font-size:18px;
+    line-height:1.7;
 }
 
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 15px 22px;
-
-    border-radius: 12px;
-
-    text-decoration: none;
-
-    font-size: 14px;
-    font-weight: 800;
-
-    transition: 0.2s;
-
-    cursor: pointer;
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
 }
 
-.btn-primary {
-    background: var(--green);
-    color: #031008;
-
-    box-shadow: 0 8px 30px rgba(32,232,121,0.20);
+.btn{
+    padding:16px 23px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:900;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
 }
 
-.btn-primary:hover {
-    background: white;
+.btn-green{
+    background:#22c55e;
+    color:#031108;
+    box-shadow:0 0 30px rgba(34,197,94,.2);
 }
 
-.btn-dark {
-    background: rgba(255,255,255,0.08);
-
-    color: white;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    backdrop-filter: blur(10px);
+.btn-green:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 35px rgba(34,197,94,.35);
 }
 
-.btn-dark:hover {
-    border-color: var(--green);
-    color: var(--green);
+.btn-outline{
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.06);
 }
 
-
-/* HERO STATS */
-
-.hero-stats {
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 12px;
-
-    margin-top: 50px;
+.btn-outline:hover{
+    border-color:#22c55e;
+    color:#22c55e;
+    transform:translateY(-4px);
 }
 
-.hero-stat {
-    min-width: 135px;
+/* ================= SECTION ================= */
 
-    padding: 18px;
-
-    background: rgba(6,13,8,0.75);
-
-    border: 1px solid rgba(32,232,121,0.15);
-
-    border-radius: 16px;
-
-    backdrop-filter: blur(12px);
+section{
+    padding:110px 22px;
 }
 
-.hero-stat strong {
-    display: block;
-
-    color: white;
-
-    font-size: 21px;
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
-.hero-stat span {
-    display: block;
-
-    margin-top: 5px;
-
-    color: #849188;
-
-    font-size: 12px;
+.section-label{
+    color:#22c55e;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:12px;
 }
 
-
-/* =========================
-   QUICK INFO
-========================= */
-
-.quick-info {
-    max-width: 1200px;
-
-    margin: -65px auto 0;
-
-    padding: 0 22px;
-
-    position: relative;
-
-    z-index: 10;
+.section-title{
+    font-size:clamp(35px,6vw,65px);
+    line-height:1;
+    font-weight:1000;
 }
 
-.info-box {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    background: #0d1510;
-
-    border: 1px solid var(--border);
-
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+.section-title span{
+    color:#22c55e;
 }
 
-.info-item {
-    padding: 26px 18px;
-
-    text-align: center;
-
-    border-right: 1px solid rgba(255,255,255,0.06);
+.section-description{
+    color:#999;
+    max-width:600px;
+    line-height:1.7;
+    margin-top:18px;
 }
 
-.info-item:last-child {
-    border-right: none;
+/* ================= STATS ================= */
+
+.stats{
+    margin-top:-30px;
+    position:relative;
+    z-index:10;
 }
 
-.info-icon {
-    font-size: 25px;
-
-    margin-bottom: 9px;
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:#101410;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:25px;
+    overflow:hidden;
 }
 
-.info-item strong {
-    display: block;
-
-    font-size: 14px;
+.stat{
+    padding:30px 20px;
+    text-align:center;
+    border-right:1px solid rgba(255,255,255,.06);
 }
 
-.info-item span {
-    display: block;
-
-    margin-top: 6px;
-
-    color: var(--muted);
-
-    font-size: 12px;
+.stat:last-child{
+    border:none;
 }
 
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    padding: 110px 22px;
+.stat-number{
+    font-size:30px;
+    font-weight:1000;
+    color:#22c55e;
 }
 
-.container {
-    max-width: 1200px;
-
-    margin: auto;
+.stat-text{
+    color:#888;
+    margin-top:7px;
+    font-size:13px;
 }
 
-.section-title {
-    margin-bottom: 48px;
+/* ================= ABOUT ================= */
+
+.about-grid{
+    margin-top:55px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
 }
 
-.section-title small {
-    color: var(--green);
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    text-transform: uppercase;
-
-    letter-spacing: 3px;
-}
-
-.section-title h2 {
-    margin-top: 10px;
-
-    font-size: clamp(35px, 5vw, 58px);
-
-    line-height: 1;
-
-    letter-spacing: -2px;
-}
-
-.section-title p {
-    max-width: 650px;
-
-    margin-top: 16px;
-
-    color: var(--muted);
-
-    line-height: 1.7;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-}
-
-.about-image {
-    min-height: 500px;
-
-    border-radius: 30px;
+.about-photo{
+    height:500px;
+    border-radius:30px;
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.05),
-            rgba(0,0,0,0.45)
+            rgba(0,0,0,.1),
+            rgba(0,0,0,.4)
         ),
-        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=90")
-        center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=90")
+        center/cover;
 
-    border: 1px solid rgba(32,232,121,0.15);
-
-    box-shadow: 0 20px 70px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 25px 80px rgba(0,0,0,.4);
 }
 
-.about-text p {
-    color: #aeb8b1;
-
-    line-height: 1.8;
-
-    margin-bottom: 25px;
+.about-content p{
+    color:#aaa;
+    line-height:1.9;
+    margin-bottom:20px;
 }
 
-.features {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 12px;
+.feature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:25px;
 }
 
-.feature {
-    padding: 20px;
-
-    background: var(--card);
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    border-radius: 17px;
+.feature{
+    padding:20px;
+    border-radius:18px;
+    background:#101410;
+    border:1px solid rgba(255,255,255,.06);
+    transition:.3s;
 }
 
-.feature b {
-    display: block;
-
-    margin-bottom: 7px;
+.feature:hover{
+    transform:translateY(-5px);
+    border-color:#22c55e;
 }
 
-.feature span {
-    color: #7e8a82;
-
-    font-size: 12px;
+.feature-icon{
+    font-size:27px;
+    margin-bottom:10px;
 }
 
-
-/* =========================
-   SERVICES
-========================= */
-
-.services {
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(32,232,121,0.07),
-            transparent 30%
-        ),
-        #080d09;
+.feature h3{
+    font-size:16px;
 }
 
-.cards {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 17px;
+.feature p{
+    margin-top:7px;
+    font-size:12px;
+    color:#777;
 }
 
-.card {
-    position: relative;
+/* ================= SERVICES ================= */
 
-    padding: 30px;
+.services{
+    background:#080b08;
+}
 
-    min-height: 230px;
+.service-grid{
+    margin-top:55px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    position:relative;
+    overflow:hidden;
+
+    padding:32px;
+
+    min-height:220px;
+
+    border-radius:25px;
 
     background:
         linear-gradient(
             145deg,
-            #111a13,
-            #091009
+            #121712,
+            #090c09
         );
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border:1px solid rgba(255,255,255,.07);
 
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    transition: 0.2s;
+    transition:.4s;
 }
 
-.card::after {
-    content: "";
+.service::before{
+    content:"";
+    position:absolute;
 
-    position: absolute;
+    width:100px;
+    height:100px;
 
-    width: 100px;
-    height: 100px;
+    right:-40px;
+    top:-40px;
 
-    right: -50px;
-    bottom: -50px;
-
-    border-radius: 50%;
-
-    background: var(--green);
-
-    opacity: 0.08;
-
-    filter: blur(20px);
+    background:#22c55e;
+    filter:blur(60px);
+    opacity:.15;
 }
 
-.card:hover {
-    border-color: rgba(32,232,121,0.4);
-
-    transform: translateY(-5px);
+.service:hover{
+    transform:translateY(-8px);
+    border-color:rgba(34,197,94,.5);
 }
 
-.card-icon {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(32,232,121,0.1);
-
-    border: 1px solid rgba(32,232,121,0.2);
-
-    border-radius: 16px;
-
-    font-size: 26px;
-
-    margin-bottom: 22px;
+.service-icon{
+    font-size:38px;
+    margin-bottom:25px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
-
-    font-size: 19px;
+.service h3{
+    font-size:22px;
 }
 
-.card p {
-    color: #829087;
-
-    font-size: 14px;
-
-    line-height: 1.7;
+.service p{
+    color:#888;
+    line-height:1.6;
+    font-size:14px;
+    margin-top:10px;
 }
 
+/* ================= GALLERY ================= */
 
-/* =========================
-   GALLERY
-========================= */
+.gallery-grid{
+    margin-top:55px;
 
-.gallery {
-    display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr;
-
-    grid-auto-rows: 230px;
-
-    gap: 12px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-auto-rows:220px;
+    gap:14px;
 }
 
-.gallery img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 18px;
-
-    border: 1px solid rgba(32,232,121,0.1);
-
-    transition: 0.2s;
+.gallery-item{
+    overflow:hidden;
+    border-radius:22px;
+    position:relative;
 }
 
-.gallery img:hover {
-    border-color: rgba(32,232,121,0.45);
+.gallery-item:first-child{
+    grid-row:span 2;
 }
 
-.gallery img:first-child {
-    grid-row: span 2;
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
 }
 
-
-/* =========================
-   REVIEWS
-========================= */
-
-.reviews {
-    background: #080d09;
+.gallery-item:hover img{
+    transform:scale(1.08);
 }
 
-.rating {
-    display: flex;
+/* ================= BOOKING ================= */
 
-    align-items: center;
+.booking-box{
+    margin-top:55px;
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
 
-    gap: 18px;
+    padding:40px;
 
-    margin-bottom: 30px;
+    background:#101410;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+
+    box-shadow:0 30px 100px rgba(0,0,0,.3);
 }
 
-.rating-number {
-    font-size: 55px;
-
-    font-weight: 900;
-
-    color: white;
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
-.stars {
-    color: #ffd23f;
-
-    font-size: 20px;
-
-    letter-spacing: 2px;
+.form-group{
+    margin-bottom:18px;
 }
 
-.review-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 16px;
+.form-group label{
+    display:block;
+    color:#aaa;
+    font-size:13px;
+    margin-bottom:8px;
 }
 
-.review {
-    padding: 25px;
+input,
+select{
+    width:100%;
+    padding:16px;
 
-    background: #101810;
+    border-radius:14px;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,.08);
 
-    border-radius: 21px;
+    background:#060806;
+    color:white;
+
+    outline:none;
 }
 
-.review-top {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin-bottom: 12px;
+input:focus,
+select:focus{
+    border-color:#22c55e;
 }
 
-.review-name {
-    font-weight: 800;
+.submit{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    font-size:15px;
 }
 
-.review-date {
-    color: #68736b;
+/* ================= REVIEWS ================= */
 
-    font-size: 11px;
+.reviews{
+    background:#080b08;
 }
 
-.review p {
-    margin-top: 13px;
+.rating-box{
+    margin-top:40px;
 
-    color: #9da89f;
-
-    font-size: 14px;
-
-    line-height: 1.7;
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-
-/* =========================
-   BOOKING
-========================= */
-
-.booking {
-    background:
-        linear-gradient(
-            rgba(3,8,5,0.84),
-            rgba(3,8,5,0.94)
-        ),
-        url("https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1800&q=90")
-        center/cover no-repeat;
+.rating-number{
+    font-size:65px;
+    font-weight:1000;
 }
 
-.booking-box {
-    max-width: 720px;
-
-    margin: auto;
-
-    padding: 35px;
-
-    background: rgba(8,15,10,0.90);
-
-    border: 1px solid rgba(32,232,121,0.2);
-
-    border-radius: 28px;
-
-    backdrop-filter: blur(18px);
+.stars{
+    color:#22c55e;
+    font-size:23px;
 }
 
-.form-group {
-    margin-bottom: 17px;
+.rating-text{
+    color:#777;
+    font-size:13px;
 }
 
-.form-group label {
-    display: block;
+.review-grid{
+    margin-top:35px;
 
-    margin-bottom: 8px;
-
-    color: #dce4de;
-
-    font-size: 13px;
-
-    font-weight: 700;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-
-    padding: 15px;
-
-    border-radius: 12px;
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    background: #060a07;
-
-    color: white;
-
-    outline: none;
-
-    font-size: 14px;
+.review{
+    padding:28px;
+    border-radius:23px;
+    background:#101410;
+    border:1px solid rgba(255,255,255,.06);
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: var(--green);
+.review-name{
+    font-weight:bold;
 }
 
-.book-submit {
-    width: 100%;
-
-    border: none;
-
-    margin-top: 5px;
+.review-date{
+    color:#666;
+    font-size:12px;
+    margin-top:4px;
 }
 
-
-/* =========================
-   LOCATION
-========================= */
-
-.location-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 20px;
+.review p{
+    color:#999;
+    line-height:1.7;
+    margin-top:18px;
+    font-size:14px;
 }
 
-.location-card {
-    padding: 30px;
+/* ================= LOCATION ================= */
 
-    background: var(--card);
+.location-grid{
+    margin-top:55px;
 
-    border: 1px solid rgba(255,255,255,0.07);
-
-    border-radius: 24px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-.location-card h3 {
-    margin-bottom: 15px;
+.location-card{
+    padding:35px;
+    background:#101410;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.07);
 }
 
-.location-card p {
-    color: #929d95;
-
-    line-height: 1.8;
-
-    margin-bottom: 20px;
+.location-card h3{
+    font-size:25px;
+    margin-bottom:15px;
 }
 
-.map-box {
-    min-height: 330px;
+.location-card p{
+    color:#999;
+    line-height:1.7;
+}
 
-    border-radius: 24px;
+.map{
+    min-height:320px;
+    border-radius:25px;
 
     background:
-        linear-gradient(
-            rgba(0,0,0,0.15),
-            rgba(0,0,0,0.65)
-        ),
-        url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=90")
+        linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.7)),
+        url("https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=90")
         center/cover;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
+/* ================= FOOTER ================= */
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 45px 22px;
-
-    background: #030503;
-
-    border-top: 1px solid rgba(255,255,255,0.06);
+footer{
+    padding:60px 22px 30px;
+    background:#030503;
+    border-top:1px solid rgba(255,255,255,.07);
 }
 
-.footer-inner {
-    max-width: 1200px;
+.footer{
+    max-width:1200px;
+    margin:auto;
 
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.footer-brand {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    font-weight: 900;
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-.footer-brand img {
-    width: 38px;
-    height: 38px;
-
-    object-fit: contain;
-
-    background: white;
-
-    border-radius: 9px;
+.footer-logo img{
+    width:50px;
+    height:50px;
+    object-fit:contain;
 }
 
-.footer-brand span {
-    color: var(--green);
+.footer-logo strong{
+    font-size:22px;
 }
 
-footer p {
-    color: #69736c;
-
-    font-size: 12px;
+.footer-logo span{
+    color:#22c55e;
 }
 
-.social {
-    display: flex;
-
-    gap: 9px;
+.footer p{
+    color:#666;
+    font-size:13px;
 }
 
-.social a {
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 11px;
-
-    background: #0e150f;
-
-    color: white;
-
-    text-decoration: none;
-
-    border: 1px solid rgba(255,255,255,0.06);
-
-    transition: 0.2s;
+.social{
+    display:flex;
+    gap:10px;
 }
 
-.social a:hover {
-    background: var(--green);
+.social a{
+    width:42px;
+    height:42px;
+    border-radius:50%;
 
-    color: #031008;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+    color:white;
+
+    background:#101410;
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
 }
 
+.social a:hover{
+    background:#22c55e;
+    color:#031108;
+}
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= MOBILE ================= */
 
-@media(max-width: 850px) {
+@media(max-width:850px){
 
-    .nav-links {
-        position: absolute;
+    .nav-links{
+        display:none;
 
-        top: 76px;
+        position:absolute;
+        top:76px;
+        left:0;
 
-        left: 0;
+        width:100%;
 
-        width: 100%;
+        flex-direction:column;
+        gap:0;
 
-        padding: 25px;
-
-        display: none;
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 8px;
-
-        background: #070b08;
-
-        border-bottom: 1px solid rgba(32,232,121,0.15);
+        background:#080b08;
+        border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    .nav-links.active {
-        display: flex;
+    .nav-links.active{
+        display:flex;
     }
 
-    .nav-links a {
-        display: block;
-
-        padding: 13px;
-
-        border-radius: 10px;
+    .nav-links li{
+        padding:17px 22px;
     }
 
-    .nav-links a:hover {
-        background: rgba(32,232,121,0.08);
+    .menu{
+        display:block;
     }
 
-    .nav-book {
-        text-align: center;
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .menu-btn {
-        display: flex;
+    .stat:nth-child(2){
+        border-right:none;
     }
 
-    .info-box {
-        grid-template-columns: 1fr 1fr;
+    .stat:nth-child(1),
+    .stat:nth-child(2){
+        border-bottom:1px solid rgba(255,255,255,.06);
     }
 
-    .info-item:nth-child(2) {
-        border-right: none;
+    .about-grid,
+    .location-grid{
+        grid-template-columns:1fr;
     }
 
-    .info-item:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(255,255,255,0.06);
+    .service-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr;
+    .review-grid{
+        grid-template-columns:1fr;
     }
 
-    .about-image {
-        min-height: 360px;
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-auto-rows:180px;
     }
 
-    .cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .review-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .location-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-inner {
-        flex-direction: column;
-
-        text-align: center;
+    .gallery-item:first-child{
+        grid-column:span 2;
+        grid-row:span 1;
     }
 }
 
+@media(max-width:550px){
 
-@media(max-width: 560px) {
-
-    header,
-    .navbar {
-        height: 68px;
+    .brand-text{
+        font-size:17px;
     }
 
-    .navbar {
-        padding: 0 15px;
+    .brand img{
+        width:42px;
+        height:42px;
     }
 
-    .logo {
-        font-size: 18px;
+    .hero{
+        min-height:850px;
     }
 
-    .logo img {
-        width: 42px;
-        height: 42px;
+    .hero-logo{
+        width:115px;
+        height:115px;
     }
 
-    .nav-links {
-        top: 68px;
+    .hero h1{
+        font-size:62px;
+        letter-spacing:-3px;
     }
 
-    .hero {
-        min-height: 750px;
-
-        padding-top: 130px;
+    .hero-description{
+        font-size:15px;
     }
 
-    .hero h1 {
-        font-size: 58px;
-
-        letter-spacing: -3px;
+    .about-photo{
+        height:350px;
     }
 
-    .hero p {
-        font-size: 15px;
+    .feature-grid,
+    .service-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
     }
 
-    .hero-stat {
-        min-width: 110px;
-
-        padding: 14px;
+    .gallery-item:first-child{
+        grid-column:span 1;
     }
 
-    .info-box {
-        grid-template-columns: 1fr 1fr;
+    .gallery-grid{
+        grid-auto-rows:220px;
     }
 
-    .info-item {
-        padding: 20px 10px;
+    .form-row{
+        grid-template-columns:1fr;
     }
 
-    .features {
-        grid-template-columns: 1fr;
+    .booking-box{
+        padding:22px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-
-        grid-auto-rows: 150px;
-    }
-
-    .gallery img:first-child {
-        grid-column: span 2;
-
-        grid-row: span 1;
-    }
-
-    .booking-box {
-        padding: 22px;
-    }
-
-    section {
-        padding: 80px 17px;
-    }
-
-    .quick-info {
-        padding: 0 14px;
+    .footer{
+        flex-direction:column;
+        text-align:center;
     }
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- ================= NAVBAR ================= -->
 
 <header>
 
 <nav class="navbar">
 
-    <a href="#home" class="logo">
+<a href="#home" class="brand">
 
-        <img src="logo.png" alt="EKAM Football Academy Logo">
+<img src="logo.png" alt="EKAM Logo">
 
-        <div>
-            EKAM <span>FOOTBALL</span>
-        </div>
+<div class="brand-text">
+EKAM <span>FOOTBALL</span>
+</div>
 
-    </a>
+</a>
 
+<ul class="nav-links" id="navLinks">
 
-    <ul class="nav-links" id="navLinks">
+<li>
+<a href="#home">Home</a>
+</li>
 
-        <li>
-            <a href="#home">Home</a>
-        </li>
+<li>
+<a href="#about">About</a>
+</li>
 
-        <li>
-            <a href="#about">About</a>
-        </li>
+<li>
+<a href="#services">Academy</a>
+</li>
 
-        <li>
-            <a href="#services">Facilities</a>
-        </li>
+<li>
+<a href="#gallery">Gallery</a>
+</li>
 
-        <li>
-            <a href="#gallery">Photos</a>
-        </li>
+<li>
+<a href="#reviews">Reviews</a>
+</li>
 
-        <li>
-            <a href="#reviews">Reviews</a>
-        </li>
+<li>
+<a href="#booking" class="nav-book">Book Now</a>
+</li>
 
-        <li>
-            <a href="#booking" class="nav-book">Book Now</a>
-        </li>
+</ul>
 
-    </ul>
-
-
-    <div
-        class="menu-btn"
-        onclick="toggleMenu()">
-
-        ☰
-
-    </div>
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
 
 </nav>
 
 </header>
 
 
-
-<!-- =========================
-     HERO
-========================= -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
 <div class="hero-content">
 
-    <div class="badge">
-        ⚽ EKAM FOOTBALL ACADEMY
-    </div>
+<img
+src="logo.png"
+alt="EKAM Football Academy"
+class="hero-logo"
+>
 
+<div class="hero-tag">
+FOOTBALL • TRAINING • PASSION
+</div>
 
-    <h1>
+<h1>
+PLAY<br>
+<span>LIKE YOU</span><br>
+MEAN IT.
+</h1>
 
-        PLAY.<br>
+<p class="hero-description">
+Welcome to EKAM Football Academy.
+A place where players train harder,
+play smarter and enjoy the beautiful game.
+</p>
 
-        <span>COMPETE.</span><br>
+<div class="hero-buttons">
 
-        REPEAT.
+<a href="#booking" class="btn btn-green">
+⚽ BOOK A SLOT
+</a>
 
-    </h1>
+<a
+href="https://www.google.com/maps/search/?api=1&query=Ekam+Football+Turf"
+target="_blank"
+class="btn btn-outline"
+>
+📍 GET DIRECTIONS
+</a>
 
-
-    <p>
-
-        Welcome to EKAM Football Turf —
-        a place for football lovers, teams,
-        friends and unforgettable matches.
-
-    </p>
-
-
-    <div class="buttons">
-
-        <a
-            href="#booking"
-            class="btn btn-primary">
-
-            ⚽ Book Your Slot
-
-        </a>
-
-
-        <a
-            href="https://www.google.com/maps/search/?api=1&query=Ekam+Football+Turf"
-            target="_blank"
-            class="btn btn-dark">
-
-            📍 Directions
-
-        </a>
-
-
-        <a
-            href="tel:+919000000000"
-            class="btn btn-dark">
-
-            📞 Call EKAM
-
-        </a>
-
-    </div>
-
-
-    <div class="hero-stats">
-
-        <div class="hero-stat">
-
-            <strong>4.4 ★</strong>
-
-            <span>
-                Google Rating
-            </span>
-
-        </div>
-
-
-        <div class="hero-stat">
-
-            <strong>5s & 7s</strong>
-
-            <span>
-                Football Formats
-            </span>
-
-        </div>
-
-
-        <div class="hero-stat">
-
-            <strong>24/7</strong>
-
-            <span>
-                Open Hours
-            </span>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 </section>
 
 
+<!-- ================= STATS ================= -->
 
-<!-- =========================
-     QUICK INFO
-========================= -->
+<section class="stats">
 
-<div class="quick-info">
+<div class="container">
 
-<div class="info-box">
+<div class="stats-grid">
 
+<div class="stat">
 
-    <div class="info-item">
+<div class="stat-number">
+4.4★
+</div>
 
-        <div class="info-icon">
-            ⭐
-        </div>
+<div class="stat-text">
+Google Rating
+</div>
 
-        <strong>
-            4.4 Rating
-        </strong>
+</div>
 
-        <span>
-            65+ Reviews
-        </span>
+<div class="stat">
 
-    </div>
+<div class="stat-number">
+65+
+</div>
 
+<div class="stat-text">
+Reviews
+</div>
 
-    <div class="info-item">
+</div>
 
-        <div class="info-icon">
-            ⚽
-        </div>
+<div class="stat">
 
-        <strong>
-            5s & 7s
-        </strong>
+<div class="stat-number">
+5s / 7s
+</div>
 
-        <span>
-            Football Matches
-        </span>
+<div class="stat-text">
+Football
+</div>
 
-    </div>
+</div>
 
+<div class="stat">
 
-    <div class="info-item">
+<div class="stat-number">
+24/7
+</div>
 
-        <div class="info-icon">
-            💡
-        </div>
+<div class="stat-text">
+Open
+</div>
 
-        <strong>
-            Floodlights
-        </strong>
-
-        <span>
-            Night Football
-        </span>
-
-    </div>
-
-
-    <div class="info-item">
-
-        <div class="info-icon">
-            🕐
-        </div>
-
-        <strong>
-            Open 24 Hours
-        </strong>
-
-        <span>
-            Check Availability
-        </span>
-
-    </div>
-
+</div>
 
 </div>
 
 </div>
 
+</section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
 <div class="container">
 
+<div class="section-label">
+ABOUT EKAM
+</div>
 
-    <div class="section-title">
+<h2 class="section-title">
+MORE THAN A <span>TURF.</span>
+</h2>
 
-        <small>
-            ABOUT EKAM
-        </small>
+<p class="section-description">
+A place for football lovers to meet, train,
+compete and create unforgettable moments.
+</p>
 
-        <h2>
-            More than a turf.
-        </h2>
+<div class="about-grid">
 
-        <p>
-            A place where football brings
-            people together.
-        </p>
+<div class="about-photo">
+</div>
 
-    </div>
+<div class="about-content">
+
+<p>
+Football is more than just a game.
+It's about teamwork, competition,
+discipline and having fun with your team.
+</p>
+
+<p>
+EKAM Football Academy is built for players
+who want a quality place to play football
+with friends and teammates.
+</p>
+
+<div class="feature-grid">
+
+<div class="feature">
+
+<div class="feature-icon">
+⚽
+</div>
+
+<h3>
+Quality Turf
+</h3>
+
+<p>
+Great surface for your game.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-icon">
+💡
+</div>
+
+<h3>
+Night Games
+</h3>
+
+<p>
+Bright floodlit playing area.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-icon">
+👥
+</div>
+
+<h3>
+5s & 7s
+</h3>
+
+<p>
+Different football formats.
+</p>
+
+</div>
+
+<div class="feature">
+
+<div class="feature-icon">
+🏆
+</div>
+
+<h3>
+Tournaments
+</h3>
+
+<p>
+Bring your team and compete.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 
-    <div c
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-label">
+EKAM ACADEMY
+</div>
+
+<h2 class="section-title">
+TRAIN.<br>
+<span>PLAY. WIN.</span>
+</h2>
+
+<p class="section-description">
+Everything you need for an exciting football session.
+</p>
+
+<div class="service-grid">
+
+<div class="service">
+
+<div class="service-icon">
+⚽
+</div>
+
+<h3>
+Football Turf
+</h3>
+
+<p>
+Play 5-a-side and 7-a-side matches
+with your friends and team.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+🌙
+</div>
+
+<h3>
+Night Football
+</h3>
+
+<p>
+Keep the game going after sunset
+with floodlit football.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+🏆
+</div>
+
+<h3>
+Tournaments
+</h3>
+
+<p>
+Bring teams together and organize
+competitive football matches.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+🔥
+</div>
+
+<h3>
+Training
+</h3>
+
+<p>
+Improve your skills, fitness,
+passing and teamwork.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+👟
+</div>
+
+<h3>
+Team Sessions
+</h3>
+
+<p>
+Perfect for friends, clubs and
+football teams.
+</p>
+
+</div>
+
+<div class="service">
+
+<div class="service-icon">
+📅
+</div>
+
+<h3>
+Easy Booking
+</h3>
+
+<p>
+Choose your time and contact us
+to reserve your session.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-label">
+OUR TURF
+</div>
+
+<h2 class="section-title">
+THE <span>GAME</span> STARTS HERE.
+</h2>
+
+<p class="section-description">
+Replace these sample images with your actual EKAM photos.
+</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1200&q=90"
+alt="Football Turf"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=90"
+alt="Football"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=90"
+alt="Football Match"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=90"
+alt="Football Field"
+>
+
+</div>
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=900&q=90"
+alt="Football Players"
+>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-label">
+PLAYER REVIEWS
+</div>
+
+<h2 class="section-title">
+WHAT PLAYERS <span>SAY.</span>
+</h2>
+
+<div class="rating-box">
+
+<div class="rating-number">
+4.4
+</div>
+
+<div>
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="rating-text">
+65+ Google Reviews
+</div>
+
+</div>
+
+</div>
+
+<div class="review-grid">
+
+<div class="review">
+
+<div class="stars">
+★★★★★
+</div>
+
+<div style="margin-top:15px">
+
+<div class="review-name">
+Abdul Wadhood
+</div>
+
+<div class="review-date">
+7 months ago
+</div>
+
+</div>
+
+<p>
+Well maintained football turf.
+The turf is in good condition and
+suitable for 5s and 7s.
+</p>
+
+</div>
+
+<div class="review">
+
+<div cl
 
 
     
